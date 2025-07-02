@@ -103,5 +103,5 @@ def upload_file():
 def processed_file(filename):
     return send_file(os.path.join(app.config['PROCESSED_FOLDER'], filename))
 
-if __name__ == '__main__':
-    app.run(debug=True) 
+#if __name__ == '__main__':
+    #app.run(debug=True) 
