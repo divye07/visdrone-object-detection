@@ -14,7 +14,7 @@ app.config['PROCESSED_FOLDER'] = 'processed'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['PROCESSED_FOLDER'], exist_ok=True)
 
-MODEL_PATH = r'C:/Users/divye/OneDrive/Documents/College/DRDO/best.pt'
+MODEL_PATH = 'best.pt'
 model = YOLO(MODEL_PATH)
 
 def run_inference(input_path, output_path):
