@@ -1,0 +1,6 @@
+flask
+torch
+werkzeug
+opencv-python
+pillow
+ultralytics 

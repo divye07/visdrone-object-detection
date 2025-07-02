@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO10s VisDrone AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/logo.svg">
+</head>
+<body>
+    <div class="container glass">
+        <img src="/static/logo.svg" alt="Logo" class="logo">
+        <h1>YOLO10s VisDrone AI</h1>
+        <p class="description">Aerial Object Detection with YOLOv10s on VisDrone dataset (11 classes).</p>
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file-upload" class="custom-file-upload glass">
+                <input id="file-upload" type="file" name="file" accept="image/*,video/*" required />
+                <span>Choose Image or Video</span>
+            </label>
+            <button type="submit" class="glass">Upload & Detect</button>
+        </form>
+        <div class="loading-spinner glass hidden">
+            <div class="spinner"></div>
+            <p><span id="loading-message">Processing...</span></p>
+            <div id="upload-progress-container" class="progress-bar-container hidden">
+                <div class="progress-bar"></div>
+            </div>
+            <div id="processing-progress-container" class="progress-bar-container hidden">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        <div id="preview" class="glass">
+            <p>Preview will appear here...</p>
+        </div>
+        <div id="result-section" class="result glass hidden">
+            <h2>Result</h2>
+            <p class="detection-info">Detected Objects: <span id="detected-objects-count">0</span></p>
+            <div id="processed-media-container">
+                <!-- Processed media will be injected here -->
+            </div>
+            <a id="download-button" href="#" download class="download-button glass">Download Result</a>
+        </div>
+    </div>
+    <footer class="glass">Made with <span style="color: #e25555;">&hearts;</span> Divye</footer>
+    <script src="/static/script.js"></script>
+</body>
+</html> 
