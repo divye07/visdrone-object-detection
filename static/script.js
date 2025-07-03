@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const processedMediaContainer = document.getElementById('processed-media-container');
     const downloadButton = document.getElementById('download-button');
 
-    // IMPORTANT: Replace this with your deployed Render backend URL
-    const BASE_URL = "https://YOUR_RENDER_DEPLOYMENT_URL"; 
-
     let processingInterval = null;
 
     function resetUI() {
@@ -173,12 +170,12 @@ document.addEventListener('DOMContentLoaded', function() {
             resetUI();
         };
 
-        xhr.open('POST', `${BASE_URL}/upload`, true);
+        xhr.open('POST', '/upload', true);
         xhr.send(formData);
     });
 
     function displayResult(filename, detections) {
-        const mediaUrl = `${BASE_URL}/processed/${filename}`;
+        const mediaUrl = '/processed/' + filename;
         const ext = filename.split('.').pop().toLowerCase();
 
         processedMediaContainer.innerHTML = '';

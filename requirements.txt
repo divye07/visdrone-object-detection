@@ -4,5 +4,4 @@ werkzeug
 opencv-python
 pillow
 ultralytics
-flask-cors
 gunicorn 

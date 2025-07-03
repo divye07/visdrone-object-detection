@@ -1,14 +1,12 @@
-from flask import Flask, request, send_file, jsonify
+from flask import Flask, render_template, request, send_file, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
 import os
 from ultralytics import YOLO
 import cv2
 import numpy as np
 from PIL import Image
-from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app) # Enable CORS for all routes
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['PROCESSED_FOLDER'] = 'processed'
 
@@ -77,8 +75,8 @@ def run_inference(input_path, output_path):
     return {'filename': os.path.basename(output_path), 'detections': detection_count}
 
 @app.route('/', methods=['GET'])
-def home():
-    return jsonify({'status': 'API is running'})
+def index():
+    return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -106,4 +104,4 @@ def processed_file(filename):
     return send_file(os.path.join(app.config['PROCESSED_FOLDER'], filename))
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000)) 
+    app.run(debug=True) 
