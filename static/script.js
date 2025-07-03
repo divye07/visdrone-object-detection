@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const downloadButton = document.getElementById('download-button');
 
     // IMPORTANT: Replace this with your deployed Render backend URL
-    const BASE_URL = "https://YOUR_RENDER_DEPLOYMENT_URL"; 
+    const BASE_URL = "https://visdrone-object-detection.onrender.com/"; 
 
     let processingInterval = null;
 
