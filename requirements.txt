@@ -3,5 +3,6 @@ torch
 werkzeug
 opencv-python
 pillow
-ultralytics 
-gunicorn
+ultralytics
+flask-cors
+gunicorn 
